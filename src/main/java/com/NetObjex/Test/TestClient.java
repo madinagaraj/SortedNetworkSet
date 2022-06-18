@@ -10,7 +10,7 @@ import java.net.Socket;
 import java.util.Arrays;
 
 
-public class Client {
+public class TestClient {
 
     public static void main(String[] args) throws IOException {
         Socket socket = new Socket(HOST, SERVER_PORT);
@@ -23,7 +23,7 @@ public class Client {
 
         // Get Size
         sendInputStreamToServer(serverWriteStream, 2, 3, 1);
-        assert serverReadStream.available()== 4;
+
 
        sendInputStreamToServer(serverWriteStream, 4, 1, 2, 2, 30);
 
@@ -43,7 +43,9 @@ public class Client {
         // Disconnect
         sendInputStreamToServer(serverWriteStream, 1, 5);
 
-        System.out.print(serverReadStream.readInt() + " ");
+        while (true) {
+            System.out.print(serverReadStream.readInt() + " ");
+        }
 
     }
 
