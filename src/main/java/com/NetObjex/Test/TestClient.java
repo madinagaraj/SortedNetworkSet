@@ -25,12 +25,12 @@ public class TestClient {
         sendInputStreamToServer(serverWriteStream, 2, 3, 1);
 
 
-       sendInputStreamToServer(serverWriteStream, 4, 1, 2, 2, 30);
+       sendInputStreamToServer(serverWriteStream, 4, 1, 1, 2, 30);
 
         // Get Size
-        sendInputStreamToServer(serverWriteStream, 2, 3, 2);
+        sendInputStreamToServer(serverWriteStream, 2, 3, 1);
 
-      /*   // Get Key Value
+      // Get Key Value
         sendInputStreamToServer(serverWriteStream, 3, 4, 1, 1);
         sendInputStreamToServer(serverWriteStream, 3, 4, 2, 2);
 
@@ -38,7 +38,7 @@ public class TestClient {
         sendInputStreamToServer(serverWriteStream, 6, 6, 1, 2, 3, 12, 32);
 
         // Removal
-        sendInputStreamToServer(serverWriteStream, 3, 2, 1, 1);*/
+        sendInputStreamToServer(serverWriteStream, 3, 2, 1, 1);
 
         // Disconnect
         sendInputStreamToServer(serverWriteStream, 1, 5);

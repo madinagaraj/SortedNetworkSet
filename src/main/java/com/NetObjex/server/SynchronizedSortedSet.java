@@ -20,11 +20,12 @@ public class SynchronizedSortedSet implements SortedSet {
 
     SynchronizedSortedSet() {
         setIdToSetMap = Collections.synchronizedMap(new TreeMap<>());
-        setIdToScoreMap = Collections.synchronizedMap(new TreeMap<>());
+        setIdToScoreMap = new TreeMap<>();
     }
 
     @Override
     public void put(int setId, int key, int score) {
+        synchronized (setIdToScoreMap) {
             boolean setExists = isExistingSet(setId);
             if (setExists) {
                 addKey(setId, key, score);
@@ -33,6 +34,7 @@ public class SynchronizedSortedSet implements SortedSet {
                 Set<Integer> set = new TreeSet<>(Collections.singletonList(key));
                 setIdToSetMap.put(key, set);
             }
+        }
     }
 
     private void addKey(int setId, int key, int score) {
