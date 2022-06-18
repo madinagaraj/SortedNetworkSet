@@ -20,6 +20,7 @@ public class TestClient {
         DataInputStream serverReadStream = new DataInputStream(socket.getInputStream());
 
         sendInputStreamToServer(serverWriteStream, 4, 1, 1, 1, 15);
+        sendInputStreamToServer(serverWriteStream, 4, 1, 1, 3, 80);
 
         // Get Size
         sendInputStreamToServer(serverWriteStream, 2, 3, 1);
